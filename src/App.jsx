@@ -1,32 +1,30 @@
 import { useState } from "react";
 import "./App.css";
-
-function FormWithButton() {
-  return (
-    <form className="formTest">
-      <h2>Formulário de teste</h2>
-      <fieldset>
-        <label htmlFor="">Qual é o seu nome?</label>
-        <input type="text" id="nome" />
-        <label htmlFor="">Qual é sua idade?</label>
-        <input type="text" id="idade" />
-        <button>Enviar</button>
-        <button>Apagar</button>
-      </fieldset>
-    </form>
-  );
-}
+import { Banner } from "./components/Banner";
+import { NavigationMenu } from "./components/NavigationMenu";
+import { NavigationMenuList } from "./components/NavigationMenuList";
+import { NavigationLink } from "./components/NavigationLink";
 
 function App() {
   return (
     <main>
       <header>
+        <NavigationMenu>
+          <NavigationMenuList title="hollow-knight-silksong
+          ">
+            <NavigationLink href="/">Hollow Knight - Silksong</NavigationLink>
+          </NavigationMenuList>
+          <NavigationMenuList title="clair-obscur">
+            <NavigationLink href="/">
+              Clair Obscur - Expedition 33
+            </NavigationLink>
+          </NavigationMenuList>
+        </NavigationMenu>
+      </header>
+      <Banner>
         <h1>Olá</h1>
         <h2>Mundo</h2>
-      </header>
-      <section>
-        <FormWithButton />
-      </section>
+      </Banner>
     </main>
   );
 }
