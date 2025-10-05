@@ -1,9 +1,9 @@
 import "./navigation-link.style.css";
 
-export function NavigationLink(props) {
+export function NavigationLink({ children, href, ...rest }) {
   return (
-    <a {...props} className="menu-link">
-      <span>{props.children}</span>
+    <a href={href} className="menu-link" {...rest}>
+      <span>{children}</span>
     </a>
   );
 }

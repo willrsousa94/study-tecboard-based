@@ -59,3 +59,26 @@ Uma boa prática também é criar um arquivo por componente, para o código fica
 
 Ter uma pasta Component e separar cada função de Component em arquivos específicos, para literalmente separar as responsabilidades de cada arquivo e seus CSS(não é uma boa prática deixar os componentes criados dentro do arquivo App, sendo que a responsabilidade do App é só renderizar o formato da aplicação)
 
+Hook (gancho) são funções especiais.
+Para a gente atualizar o estado de uma página React, podemos usar o useState(), uma função especial do React.
+
+exemplo de código:
+```jsx
+const [events, setEvents] = useState([
+    {
+      cover: `https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_1.png`,
+      theme: themes[0],
+      date: new Date(),
+      title: "Mulheres no Front",
+    },
+  ]);
+
+  function addEvent(event) {
+    // events.push(event);
+    //console.log("eventos => ", events);
+
+    setEvents([...events, event]);
+  }
+```
+
+O React tem o conceito de imutabilidade (pesquisar depois o conceito)
