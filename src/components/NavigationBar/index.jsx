@@ -1,6 +1,6 @@
 import { NavigationLink } from "../NavigationLink";
 import { NavigationMenu } from "../NavigationMenu";
-import { NavigationMenuList } from "../NavigationMenuList";
+import { NavigationMenuItems } from "../NavigationMenuItems";
 import "./navigation-bar.style.css";
 
 export function NavigationBar({ navigationItems, changeBannerText }) {
@@ -8,14 +8,17 @@ export function NavigationBar({ navigationItems, changeBannerText }) {
     <NavigationMenu>
       {navigationItems.map((item) => {
         return (
-          <NavigationMenuList key={item.id} title={item.title}>
-            <NavigationLink onClick={(event) => {
-          event.preventDefault();
-          changeBannerText(item.name);
-        }} href="/">
+          <NavigationMenuItems key={item.id} title={item.title}>
+            <NavigationLink
+              onClick={(event) => {
+                event.preventDefault();
+                changeBannerText(item.name);
+              }}
+              href="/"
+            >
               {item.name}
             </NavigationLink>
-          </NavigationMenuList>
+          </NavigationMenuItems>
         );
       })}
     </NavigationMenu>
