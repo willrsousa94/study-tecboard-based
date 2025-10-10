@@ -1,6 +1,18 @@
 .menu-link {
+  display: inline-block;
   text-decoration: none;
   color: #14060e;
+  background-color: aqua;
+  border: 1px solid #4A4949;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
+  width: 190px;
+  text-align: center;
 }
 
-.menu-link:hover {}
+.menu-link:hover {
+  background-color: aquamarine;
+  transition-duration: 0.2s;
+  color: #3f2d37;
+}

@@ -23,7 +23,7 @@ const navigationItems = [
 ];
 
 function App() {
-  const [bannerText, setBannerText] = useState(navigationItems[0].name);
+  const [bannerText, setBannerText] = useState("Início");
 
   const changeBannerText = (newText) => {
     setBannerText(newText);
