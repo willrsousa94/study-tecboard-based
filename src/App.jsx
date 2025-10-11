@@ -4,6 +4,7 @@ import { Banner } from "./components/Banner";
 import { NavigationBar } from "./components/NavigationBar";
 import { BannerText } from "./components/BannerText/bannerText";
 import { Sidebar } from "./components/Sidebar";
+import { HamburgerMenu } from "./components/HamburgerMenu";
 
 const navigationItems = [
   {
@@ -39,6 +40,7 @@ function App() {
       <main>
         <header>
           <Banner>
+            <HamburgerMenu></HamburgerMenu>
             <BannerText currentText={bannerText} />
           </Banner>
         </header>

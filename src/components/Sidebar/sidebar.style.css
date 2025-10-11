@@ -1,9 +1,18 @@
 .sidebar-navigation {
   position: absolute;
   height: 100%;
-  left: 10%;
+  left: 0%;
   background-color: rgb(163, 150, 150);
   text-align: center;
+  transition: .5s ease-in-out;
+  visibility: hidden;
+
+}
+
+.sidebar-navigation-opened {
+  visibility: visible;
+  transition: .5s ease-in-out;
+  left: 10%;
 }
 
 .sidebar-navigation nav {
@@ -22,7 +31,7 @@
   line-height: 50px;
 }
 
-.menu-list li a{
+.menu-list li a {
   background-color: aqua;
   margin-bottom: 20px;
   border: 1px solid #111313;
