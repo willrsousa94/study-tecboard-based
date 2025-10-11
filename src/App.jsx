@@ -41,6 +41,7 @@ const navigationItems = [
 
 function App() {
   const [bannerText, setBannerText] = useState("Início");
+  const [mainContent, setMainContent] = useState("");
 
   const changeBannerText = (newText) => {
     setBannerText(newText);
@@ -59,7 +60,7 @@ function App() {
         </Banner>
       </Header>
       <Main>
-        <MainContent navigationItems={navigationItems[0]}></MainContent>
+        <MainContent navigationItems={navigationItems[1]}></MainContent>
       </Main>
     </>
   );
