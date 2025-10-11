@@ -2,7 +2,11 @@ import { NavigationLink } from "../NavigationLink";
 import { NavigationMenuItems } from "../NavigationMenuItems";
 import "./sidebar.style.css";
 
-export function Sidebar({ navigationItems, changeBannerText }) {
+export function Sidebar({
+  navigationItems,
+  changeBannerText,
+  changeMainContent,
+}) {
   return (
     <aside className="sidebar-navigation">
       <nav>Menu</nav>
@@ -14,6 +18,7 @@ export function Sidebar({ navigationItems, changeBannerText }) {
                 onClick={(event) => {
                   event.preventDefault();
                   changeBannerText(item.name);
+                  changeMainContent(item);
                 }}
                 href="/"
               >

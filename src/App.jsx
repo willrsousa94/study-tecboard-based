@@ -13,14 +13,14 @@ const navigationItems = [
     id: 1,
     name: "Hollow Knight: Silksong",
     title: "silksong",
-    src: "../public/silksong.png",
+    src: "/silksong.png",
     text: "",
   },
   {
     id: 2,
     name: "Clair Obscur - Expedition 33",
     title: "clair-obscur",
-    src: "../public/clair-obscur-expedition-33.jpg",
+    src: "/clair-obscur-expedition-33.jpg",
     text: "",
   },
   {
@@ -34,7 +34,7 @@ const navigationItems = [
     id: 4,
     name: "Path of Exile 2",
     title: "path-exile-2",
-    src: "../public/poe2.png",
+    src: "/poe2.png",
     text: "",
   },
 ];
@@ -47,12 +47,17 @@ function App() {
     setBannerText(newText);
   };
 
+  const changeMainContent = (newContent) => {
+    setMainContent(newContent);
+  };
+
   return (
     <>
       <Header>
         <Sidebar
           navigationItems={navigationItems}
           changeBannerText={changeBannerText}
+          changeMainContent={changeMainContent}
         ></Sidebar>
         <Banner>
           <HamburgerMenu></HamburgerMenu>
@@ -60,7 +65,7 @@ function App() {
         </Banner>
       </Header>
       <Main>
-        <MainContent navigationItems={navigationItems[1]}></MainContent>
+        <MainContent currentContent={mainContent}></MainContent>
       </Main>
     </>
   );

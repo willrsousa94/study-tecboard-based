@@ -1,10 +1,10 @@
 import { Image } from "../Image";
 import "./main-content.style.css";
 
-export function MainContent({ navigationItems }) {
+export function MainContent({ currentContent }) {
   return (
     <section className="main-content">
-      <Image src={navigationItems.src}></Image>
+      <Image src={currentContent.src}></Image>
     </section>
   );
 }
