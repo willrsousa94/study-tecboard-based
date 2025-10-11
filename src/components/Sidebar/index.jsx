@@ -13,16 +13,16 @@ export function Sidebar({
       <ul className="menu-list">
         {navigationItems.map((item) => {
           return (
-            <NavigationMenuItems key={item.id} title={item.title}>
+            <NavigationMenuItems key={item.id} name={item.name}>
               <NavigationLink
                 onClick={(event) => {
                   event.preventDefault();
-                  changeBannerText(item.name);
+                  changeBannerText(item.title);
                   changeMainContent(item);
                 }}
                 href="/"
               >
-                {item.name}
+                {item.title}
               </NavigationLink>
             </NavigationMenuItems>
           );
