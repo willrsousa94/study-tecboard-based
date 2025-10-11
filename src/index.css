@@ -1,3 +1,9 @@
 body {
   background-color: #626264;
+  transition: .5s ease-in-out;
+}
+
+body.overlay {
+  transition: .5s ease-in-out;
+  background-color: rgba(50, 53, 53, 0.9);
 }

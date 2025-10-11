@@ -3,7 +3,10 @@ import "./hamburger-menu.style.css";
 export function HamburgerMenu() {
   function toggleMenu() {
     document.querySelector("#nav-icon1").classList.toggle("open");
-    document.querySelector(".sidebar-navigation").classList.toggle("sidebar-navigation-opened");
+    document
+      .querySelector(".sidebar-navigation")
+      .classList.toggle("sidebar-navigation-opened");
+    document.querySelector("body").classList.toggle("overlay");
   }
 
   return (
