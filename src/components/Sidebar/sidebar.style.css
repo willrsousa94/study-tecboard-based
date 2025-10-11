@@ -1,0 +1,31 @@
+.sidebar-navigation {
+  position: absolute;
+  height: 100%;
+  left: 10%;
+  background-color: rgb(163, 150, 150);
+  text-align: center;
+}
+
+.sidebar-navigation nav {
+  padding: 20px;
+  margin: 0 auto;
+  background-color: #111313;
+  border: 2px solid white;
+}
+
+.menu-list {
+  width: 200px;
+  max-width: 90%;
+  list-style: none;
+  padding: 10px 30px;
+  margin: 0 auto;
+  line-height: 50px;
+}
+
+.menu-list li a{
+  background-color: aqua;
+  margin-bottom: 20px;
+  border: 1px solid #111313;
+  border-radius: 5px;
+  color: black;
+}

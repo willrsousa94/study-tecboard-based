@@ -3,6 +3,7 @@ import "./App.css";
 import { Banner } from "./components/Banner";
 import { NavigationBar } from "./components/NavigationBar";
 import { BannerText } from "./components/BannerText/bannerText";
+import { Sidebar } from "./components/Sidebar";
 
 const navigationItems = [
   {
@@ -30,17 +31,19 @@ function App() {
   };
 
   return (
-    <main>
-      <header>
-        <NavigationBar
-          navigationItems={navigationItems}
-          changeBannerText={changeBannerText}
-        />
-      </header>
-      <Banner>
-        <BannerText currentText={bannerText} />
-      </Banner>
-    </main>
+    <>
+      <Sidebar
+        navigationItems={navigationItems}
+        changeBannerText={changeBannerText}
+      ></Sidebar>
+      <main>
+        <header>
+          <Banner>
+            <BannerText currentText={bannerText} />
+          </Banner>
+        </header>
+      </main>
+    </>
   );
 }
 
