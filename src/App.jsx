@@ -8,6 +8,7 @@ import { Header } from "./components/Header";
 import { Main } from "./components/Main";
 import { MainContent } from "./components/MainContent";
 
+//Array of items, I'm planning and learning how to insert this on a JSON.
 const navigationItems = [
   {
     id: 1,
@@ -27,7 +28,7 @@ const navigationItems = [
     id: 3,
     name: "Hades 2",
     title: "hades-2",
-    src: "",
+    src: "hades-2.png",
     text: "",
   },
   {
@@ -40,9 +41,11 @@ const navigationItems = [
 ];
 
 function App() {
+  // Use States
   const [bannerText, setBannerText] = useState("Início");
   const [mainContent, setMainContent] = useState("");
 
+  //All change something functions using the useState
   const changeBannerText = (newText) => {
     setBannerText(newText);
   };
@@ -51,6 +54,7 @@ function App() {
     setMainContent(newContent);
   };
 
+  //App return
   return (
     <>
       <Header>
