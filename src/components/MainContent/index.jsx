@@ -7,6 +7,7 @@ export function MainContent({ currentContent }) {
     <section className="main-content">
       <Image src={currentContent.src}></Image>
       <ContentText>{currentContent.text}</ContentText>
+      <ContentText><a href={`${currentContent.playlist}`}>{currentContent.name}</a></ContentText>
     </section>
   );
 }

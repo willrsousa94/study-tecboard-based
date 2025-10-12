@@ -17,6 +17,7 @@ const navigationItems = [
     name: "silksong",
     src: "/silksong.png",
     text: `Texto teste`,
+    playlist: "https://www.youtube.com/playlist?list=PLFm3GfoIIub-XegMzSWVu4hpTTXoM76zO"
   },
   {
     id: 2,
