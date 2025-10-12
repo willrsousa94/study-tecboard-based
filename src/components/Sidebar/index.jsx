@@ -17,7 +17,6 @@ export function Sidebar({
               <NavigationLink
                 onClick={(event) => {
                   event.preventDefault();
-                  changeBannerText(item.title);
                   changeMainContent(item);
                 }}
                 href="/"

@@ -1,5 +1,5 @@
 import "./footer.style.css";
 
-export function Footer() {
-  return <footer className="footer">Desenvolvido por William R. Sousa </footer>;
+export function Footer({ children }) {
+  return <footer className="footer">{children} </footer>;
 }
