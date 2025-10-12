@@ -1,0 +1,13 @@
+.content-text-box {
+  border: 1px solid #094040;
+  padding: 0 20px;
+  background-color: bisque;
+}
+
+.content-text {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 20px;
+  color: #000;
+}

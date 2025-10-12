@@ -7,6 +7,7 @@ import { HamburgerMenu } from "./components/HamburgerMenu";
 import { Header } from "./components/Header";
 import { Main } from "./components/Main";
 import { MainContent } from "./components/MainContent";
+import { Footer } from "./components/Footer";
 
 //Array of items, I'm planning and learning how to insert this on a JSON.
 const navigationItems = [
@@ -15,7 +16,7 @@ const navigationItems = [
     title: "Hollow Knight: Silksong",
     name: "silksong",
     src: "/silksong.png",
-    text: "",
+    text: `Texto teste`,
   },
   {
     id: 2,
@@ -40,7 +41,7 @@ const navigationItems = [
   },
   {
     id: 5,
-    title: "Baldut's Gate 3",
+    title: "Baldur's Gate 3",
     name: "baldurs-gate-3",
     src: "/baldurs-gate-3.jpg",
     text: "",
@@ -78,6 +79,7 @@ function App() {
       <Main>
         <MainContent currentContent={mainContent}></MainContent>
       </Main>
+      <Footer></Footer>
     </>
   );
 }
