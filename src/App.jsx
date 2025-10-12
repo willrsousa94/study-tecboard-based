@@ -51,7 +51,9 @@ const navigationItems = [
 function App() {
   // Use States
   const [bannerText, setBannerText] = useState("Início");
-  const [mainContent, setMainContent] = useState("");
+  const [mainContent, setMainContent] = useState({
+    text: `Texto inicial que será mudado ao acessar um jogo`,
+  });
 
   //All change something functions using the useState
   const changeBannerText = (newText) => {
