@@ -2,11 +2,7 @@ import { NavigationLink } from "../NavigationLink";
 import { NavigationMenuItems } from "../NavigationMenuItems";
 import "./sidebar.style.css";
 
-export function Sidebar({
-  navigationItems,
-  changeBannerText,
-  changeMainContent,
-}) {
+export function Sidebar({ navigationItems, changeMainContent }) {
   return (
     <aside className="sidebar-navigation">
       <nav>Menu</nav>
