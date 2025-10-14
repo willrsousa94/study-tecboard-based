@@ -51,15 +51,6 @@ const navigationItems = [
 ];
 
 function App() {
-  //useEffect to connect with my fake API that I created using json-server
-  /* useEffect(() => {
-    fetch("http://localhost:8080/games")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("conexão bem sucedidade, seguem abaixo os games");
-        console.log(data);
-      });
-  }, []); */
 
   // Use States
   const [mainContent, setMainContent] = useState({
@@ -67,6 +58,16 @@ function App() {
     text: `Texto inicial que será mudado ao acessar um jogo`,
     src: "/wizarding-world-portrait.png",
   });
+
+  //useEffect to connect with my fake API that I created using json-server
+  /* useEffect(() => {
+    fetch("http://localhost:8080/games")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("conexão bem sucedidade, seguem abaixo os games");
+        setMainContent(data);
+      });
+  }, []); */
 
   //All change something functions using the useState
 
