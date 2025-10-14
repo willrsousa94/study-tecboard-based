@@ -10,7 +10,7 @@ import { MainContent } from "./components/MainContent";
 import { Footer } from "./components/Footer";
 
 //Array of items, I'm planning and learning how to insert this on a JSON.
-/* const navigationItems = [
+const navigationGameItems = [
   {
     id: 1,
     title: "Hollow Knight: Silksong",
@@ -48,7 +48,7 @@ import { Footer } from "./components/Footer";
     src: "/baldurs-gate-3.jpg",
     text: `Texto teste`,
   },
-]; */
+];
 
 function App() {
   //Stete of the items from db.json
@@ -69,12 +69,13 @@ function App() {
 
   //useEffect to connect with my fake API that I created using json-server
   useEffect(() => {
-    fetch("http://localhost:8080/games")
+    /* fetch("http://localhost:8080/games")
       .then((response) => response.json())
       .then((data) => {
         console.log("conexão bem sucedidade, seguem abaixo os games");
         setNavigationItems(data);
-      });
+      }); */
+    setNavigationItems(navigationGameItems);
   }, []);
 
   //useRefs
