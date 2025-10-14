@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./App.css";
 import { Banner } from "./components/Banner";
 import { BannerText } from "./components/BannerText";
@@ -63,6 +63,18 @@ function App() {
     setMainContent(newContent);
   };
 
+  //useRefs
+
+  const hamburgerMenuRef = useRef(null);
+  const sidebarRef = useRef([]);
+
+  const toggleMenu = (event) => {
+    event.preventDefault();
+    hamburgerMenuRef.current.classList.toggle("open");
+    sidebarRef.current.classList.toggle("sidebar-navigation-opened");
+    document.querySelector("body").classList.toggle("overlay");
+  };
+
   //App return
   return (
     <>
@@ -70,9 +82,10 @@ function App() {
         <Sidebar
           navigationItems={navigationItems}
           changeMainContent={changeMainContent}
+          sidebarRef={sidebarRef}
         ></Sidebar>
         <Banner>
-          <HamburgerMenu></HamburgerMenu>
+          <HamburgerMenu toggleMenu={toggleMenu} ref={hamburgerMenuRef}></HamburgerMenu>
           <BannerText currentText={mainContent.title} />
         </Banner>
       </Header>

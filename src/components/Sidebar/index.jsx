@@ -2,9 +2,9 @@ import { NavigationLink } from "../NavigationLink";
 import { NavigationMenuItems } from "../NavigationMenuItems";
 import "./sidebar.style.css";
 
-export function Sidebar({ navigationItems, changeMainContent }) {
+export function Sidebar({ navigationItems, changeMainContent, sidebarRef }) {
   return (
-    <aside className="sidebar-navigation">
+    <aside className="sidebar-navigation" ref={sidebarRef}>
       <nav>Menu</nav>
       <ul className="menu-list">
         {navigationItems.map((item) => {
