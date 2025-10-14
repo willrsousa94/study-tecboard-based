@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import { Banner } from "./components/Banner";
 import { BannerText } from "./components/BannerText";
@@ -17,7 +17,8 @@ const navigationItems = [
     name: "silksong",
     src: "/silksong.png",
     text: `Texto teste`,
-    playlist: "https://www.youtube.com/playlist?list=PLFm3GfoIIub-XegMzSWVu4hpTTXoM76zO"
+    playlist:
+      "https://www.youtube.com/playlist?list=PLFm3GfoIIub-XegMzSWVu4hpTTXoM76zO",
   },
   {
     id: 2,
@@ -50,6 +51,16 @@ const navigationItems = [
 ];
 
 function App() {
+  //useEffect to connect with my fake API that I created using json-server
+  /* useEffect(() => {
+    fetch("http://localhost:8080/games")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("conexão bem sucedidade, seguem abaixo os games");
+        console.log(data);
+      });
+  }, []); */
+
   // Use States
   const [mainContent, setMainContent] = useState({
     title: "Início",
@@ -85,7 +96,10 @@ function App() {
           sidebarRef={sidebarRef}
         ></Sidebar>
         <Banner>
-          <HamburgerMenu toggleMenu={toggleMenu} ref={hamburgerMenuRef}></HamburgerMenu>
+          <HamburgerMenu
+            toggleMenu={toggleMenu}
+            ref={hamburgerMenuRef}
+          ></HamburgerMenu>
           <BannerText currentText={mainContent.title} />
         </Banner>
       </Header>

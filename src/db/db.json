@@ -1,0 +1,40 @@
+{
+  "games": [
+    {
+      "id": 1,
+      "title": "Hollow Knight: Silksong",
+      "name": "silksong",
+      "src": "/silksong.png",
+      "text": "Texto teste",
+      "playlist": "https://www.youtube.com/playlist?list=PLFm3GfoIIub-XegMzSWVu4hpTTXoM76zO"
+    },
+    {
+      "id": 2,
+      "title": "Clair Obscur - Expedition 33",
+      "name": "clair-obscur",
+      "src": "/clair-obscur-expedition-33.jpg",
+      "text": "Texto teste"
+    },
+    {
+      "id": 3,
+      "title": "Hades 2",
+      "name": "hades-2",
+      "src": "hades-2.png",
+      "text": "Texto teste"
+    },
+    {
+      "id": 4,
+      "title": "Path of Exile 2",
+      "name": "path-exile-2",
+      "src": "/poe2.png",
+      "text": "Texto teste"
+    },
+    {
+      "id": 5,
+      "title": "Baldur's Gate 3",
+      "name": "baldurs-gate-3",
+      "src": "/baldurs-gate-3.jpg",
+      "text": "Texto teste"
+    }
+  ]
+}
