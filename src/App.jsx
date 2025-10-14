@@ -10,7 +10,7 @@ import { MainContent } from "./components/MainContent";
 import { Footer } from "./components/Footer";
 
 //Array of items, I'm planning and learning how to insert this on a JSON.
-const navigationItems = [
+/* const navigationItems = [
   {
     id: 1,
     title: "Hollow Knight: Silksong",
@@ -48,9 +48,11 @@ const navigationItems = [
     src: "/baldurs-gate-3.jpg",
     text: `Texto teste`,
   },
-];
+]; */
 
 function App() {
+  //Stete of the items from db.json
+  const [navigationItems, setNavigationItems] = useState([]);
 
   // Use States
   const [mainContent, setMainContent] = useState({
@@ -59,21 +61,21 @@ function App() {
     src: "/wizarding-world-portrait.png",
   });
 
-  //useEffect to connect with my fake API that I created using json-server
-  /* useEffect(() => {
-    fetch("http://localhost:8080/games")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("conexão bem sucedidade, seguem abaixo os games");
-        setMainContent(data);
-      });
-  }, []); */
-
   //All change something functions using the useState
 
   const changeMainContent = (newContent) => {
     setMainContent(newContent);
   };
+
+  //useEffect to connect with my fake API that I created using json-server
+  useEffect(() => {
+    fetch("http://localhost:8080/games")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("conexão bem sucedidade, seguem abaixo os games");
+        setNavigationItems(data);
+      });
+  }, []);
 
   //useRefs
 
