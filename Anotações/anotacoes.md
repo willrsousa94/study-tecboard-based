@@ -7,11 +7,15 @@ o nome props é dado por uma convenção geral
 props.children
 
 Quando a gente quer o valor dinâmico, por ser JSX, pra acessar o valor dinâmico, coloca entre chaves
-por exemplo: {props.children}
+por exemplo: 
+
+```js 
+{props.children}
+```
 
 Exemplo de função
 
-```
+```jsx
 function FormularioDeEvento() {
   return (
     <form className="form-evento">
@@ -27,20 +31,21 @@ function FormularioDeEvento() {
 
 Um macete que a gente pode fazer é desconstruir usando uma funcionalidade do próprio _JavaScript_ , pra usar direto o children ao invés de ficar usando props a todo momento, por exemplo:
 
-```
+```jsx
 function CampoDeFormulario({children}){
   return (
-    <fieldset>
+    <Fieldset>
     {children}
-    </fieldset>
+    </Fieldset>
   )
 }
 ```
 
 Para um input, para pegar cada parâmetro um por um, seria muito complicado, imaginando um input que receba diversos parâmetros (type, id, placeholder, class e etc)
+
 A gente pode usar um operador que espalha as propriedades usando ...props, por exemplo:
 
-```
+```jsx
 
 function CampoDeEntrada({}){
   return <input {...props} />
@@ -82,3 +87,54 @@ const [events, setEvents] = useState([
 ```
 
 O React tem o conceito de imutabilidade (pesquisar depois o conceito)
+
+# Hooks:
+
+### [useState()](https://react.dev/reference/react/useState) 
+Controla o estado da funcionalidade/página
+
+### [useRef()](https://react.dev/reference/react/useRef) 
+Permite referenciar um valor que não precisa estar sempre renderizado
+
+### [useEffect()](https://react.dev/reference/react/useEffect) 
+
+Sincroniza um componente com um sistema externo
+
+# Códigos de Exemplo dos Hooks
+
+## useState() 
+
+```jsx
+  const [mainContent, setMainContent] = useState({
+    title: "Início",
+    text: `Texto inicial que será mudado ao acessar um jogo`,
+    src: "/wizarding-world-portrait.png",
+  });
+```
+
+## useRef()
+
+Talvez não precise, já que é apenas uma linha de código XD
+
+## useEffect()
+
+```jsx
+useEffect(() => {
+  fetch('url aqui')
+  .then(response => response.json())
+  .then(data => {
+    console.log('test')
+  })
+
+})
+```
+
+# Json-server 
+Interessante pra testar requisições com um servidor de mentira
+
+Preciso do json-server instalado e de um arquivo json (db.json) em uma pasta com uma estrutura json e rodar um comando`
+
+Exemplo: 
+
+```json-server --watch db.json -p 8080```
+
