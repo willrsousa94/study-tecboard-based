@@ -89,20 +89,23 @@ function App() {
   }, []);
 
   const addGameToList = () => {
-  // Gere um novo ID para o item
-  const newId = navigationItems.length > 0 ? navigationItems[navigationItems.length - 1].id + 1 : 1;
-  
-  const newItem = {
-    id: newId,
-    title: "Novo Jogo Adicionado!",
-    name: "novo-jogo",
-    src: "/placeholder.png",
-    text: "Conteúdo dinâmico.",
-  };
+    const newId =
+      navigationItems.length > 0
+        ? navigationItems[navigationItems.length - 1].id + 1
+        : 1;
 
-  // 💡 CORREÇÃO: Crie um NOVO ARRAY com os itens antigos e o novo item
-  setNavigationItems([...navigationItems, newItem]);
-};
+    const newItem = {
+      id: newId,
+      title: "Novo Jogo Adicionado!",
+      name: "novo-jogo",
+      src: "/placeholder.png",
+      text: "Conteúdo dinâmico.",
+    };
+
+    setNavigationItems([...navigationItems, newItem]);
+
+    toggleDialog();
+  };
 
   //useRefs
 
@@ -131,7 +134,7 @@ function App() {
           ></HamburgerMenu>
           <BannerText currentText={mainContent.title} />
           <Dialog isOpen={showDialog} isClose={toggleDialog}>
-            <AddGameForm onSubmit={addGameToList}/>
+            <AddGameForm onSubmit={addGameToList} />
           </Dialog>
           <FabButton onClick={toggleDialog}>
             <IconPlus />
