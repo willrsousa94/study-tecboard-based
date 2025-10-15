@@ -1,12 +1,8 @@
 import "./navigation-menu-list-style.css";
 
-export function NavigationMenuItems({ children, title, name }) {
+export function NavigationMenuItems({ children, title, ...rest }) {
   return (
-    <li
-      className="navigation-menu-items"
-      id={`navigation-menu-list-item-${title}`}
-      name={name}
-    >
+    <li className="navigation-menu-items" {...rest}>
       {children}
     </li>
   );

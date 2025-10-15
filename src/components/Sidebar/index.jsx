@@ -9,7 +9,11 @@ export function Sidebar({ navigationItems, changeMainContent, sidebarRef }) {
       <ul className="menu-list">
         {navigationItems.map((item) => {
           return (
-            <NavigationMenuItems key={item.id} name={item.name} title={item.name}>
+            <NavigationMenuItems
+              key={item.id}
+              name={item.name}
+              id={`navigation-menu-list-item-${item.name}`}
+            >
               <NavigationLink
                 onClick={(event) => {
                   event.preventDefault();
