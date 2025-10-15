@@ -8,6 +8,10 @@ import { Header } from "./components/Header";
 import { Main } from "./components/Main";
 import { MainContent } from "./components/MainContent";
 import { Footer } from "./components/Footer";
+import { IconPlus, IconSchool, IconClose } from "./components/icons";
+import { FabButton } from "./components/FabButton";
+import { Dialog } from "./components/Dialog";
+import { AddGameForm } from "./components/AddGameForm";
 
 //Array of items, I'm planning and learning how to insert this on a JSON.
 const navigationGameItems = [
@@ -61,10 +65,16 @@ function App() {
     src: "/wizarding-world-portrait.png",
   });
 
+  const [showDialog, setShowDialog] = useState(false);
+
   //All change something functions using the useState
 
   const changeMainContent = (newContent) => {
     setMainContent(newContent);
+  };
+
+  const toggleDialog = () => {
+    setShowDialog(!showDialog);
   };
 
   //useEffect to connect with my fake API that I created using json-server
@@ -78,6 +88,22 @@ function App() {
     setNavigationItems(navigationGameItems);
   }, []);
 
+  const addGameToList = () => {
+  // Gere um novo ID para o item
+  const newId = navigationItems.length > 0 ? navigationItems[navigationItems.length - 1].id + 1 : 1;
+  
+  const newItem = {
+    id: newId,
+    title: "Novo Jogo Adicionado!",
+    name: "novo-jogo",
+    src: "/placeholder.png",
+    text: "Conteúdo dinâmico.",
+  };
+
+  // 💡 CORREÇÃO: Crie um NOVO ARRAY com os itens antigos e o novo item
+  setNavigationItems([...navigationItems, newItem]);
+};
+
   //useRefs
 
   const hamburgerMenuRef = useRef(null);
@@ -89,7 +115,6 @@ function App() {
     sidebarRef.current.classList.toggle("sidebar-navigation-opened");
     document.querySelector("body").classList.toggle("overlay");
   };
-
   //App return
   return (
     <>
@@ -105,6 +130,12 @@ function App() {
             ref={hamburgerMenuRef}
           ></HamburgerMenu>
           <BannerText currentText={mainContent.title} />
+          <Dialog isOpen={showDialog} isClose={toggleDialog}>
+            <AddGameForm onSubmit={addGameToList}/>
+          </Dialog>
+          <FabButton onClick={toggleDialog}>
+            <IconPlus />
+          </FabButton>
         </Banner>
       </Header>
       <Main>
