@@ -138,3 +138,13 @@ Exemplo:
 
 ```json-server --watch db.json -p 8080```
 
+# PropDrilling
+
+Processo de passar dados de um componente pai para componentes filhos em diferentes níveis da árvore de componentes.
+
+Isso faz com que sejam passado props para o componente mesmo que ele não use, já que ele vai repassar para os filhos, isso não parece ser muito correto, principalmente pensando no conceito de _*DRY (Don't Repeat Yourself)*_
+
+Solução seria criar um componente que recebe todos os ToDos? Igual o do icons...
+
+# Context API
+
